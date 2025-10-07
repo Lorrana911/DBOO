@@ -5,13 +5,13 @@ import javax.persistence.Id;
 @Entity
 public class Livros {
     @Id
+    @GeneratedValue
     private Long id;
     private String titulo;
     private String genero;
 
-    @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private Autor autor;
+    public Livros() {}
+
 
     public Long getId() {
         return id;
@@ -29,20 +29,17 @@ public class Livros {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
     public String getGenero() {
         return genero;
     }
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro{" + "id=" + id + ", titulo='" + titulo + '\'' + ", genero='" + genero + '\'' + '}';
     }
 }
 
