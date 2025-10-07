@@ -2,6 +2,12 @@
              version="2.1">
     <persistence-unit name="objectdb">
         <provider>com.objectdb.jpa.Provider</provider>
+        <class>LivroDigital</class>
+        <class>LivroImpresso</class>
+        <class>Livros</class>
+        <class>Autor</class>
+        <class>Usuario</class>
+        <class>Emprestimo</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="C:/Users/lorra/Desktop/DBOO/biblioteca.odb"/>
         </properties>

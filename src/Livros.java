@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Livros {
     @Id
     @GeneratedValue

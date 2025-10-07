@@ -12,18 +12,16 @@ public class Main {
 
             em.getTransaction().begin();
 
-            Livros livro1 = new Livros();
-            livro1.setTitulo("O Fundador da Cultivação Demoniaca");
-            livro1.setGenero("Romance");
-            livro1.setId(1L);
-            System.out.println("Criando o objeto: " + livro1);
-
-            em.persist(livro1);
-            System.out.println("Objeto persistido. Aguardando commit...");
-
+            LivroDigital livro1Digital = new LivroDigital();
+            livro1Digital.setTitulo("Carry On");
+            livro1Digital.setGenero("Romance");
+            livro1Digital.setId(2L);
+            livro1Digital.setFormato("EPUB");
+            livro1Digital.setPlataforma("Amazon (Kindle Unlimited");
+            em.persist(livro1Digital);
 
             em.getTransaction().commit();
-            System.out.println("Commit realizado! O livro foi salvo no banco.");
+            System.out.println("Commit realizado bb");
 
         } finally {
             if (em.isOpen()) {
